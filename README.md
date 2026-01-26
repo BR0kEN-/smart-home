@@ -58,3 +58,24 @@ The lower the voltage, the closer you are to hit the limit of your circuit break
 
 > [!TIP]
 > While the AVR solves the problem for your home temporarily, it is strongly recommended to contact your electricity supplier and request an inspection or modernization of their equipment. The collective requests work better.
+
+### Generators
+
+#### Can I connect a single-phase generator to a 3-phase inverter?
+
+Not recommended but possible. Use a 3-phase one.
+
+#### What does the "X kWh nominal" in the generator specs mean?
+
+That you'll have to multiply it by 0.8 or less. Running a gen on a nominal causes increased fuel/oil consumption and faster aging. Avoid. Buying an 8 kWh generator, be ready to get 6 kWh from it most of the time.
+
+Any generator doesn't like spikes. To get more from it, run it on a 70-80% constantly.
+
+#### How to connect a non-inverter generator to an inverter's GEN IN port?
+
+> [!NOTE]
+> This section covers mechanics and omits the need to configure the inverter before supplying the load from a generator.
+
+1. Wire it properly following the phase sequence on both ends of a wire. Don't miss connecting PE.
+2. Start the generator and check the frequency under no load using its display (no matter which one you run, most of them have this parameter). If it's above 54, you'll have to reduce the engine RPM. Turn the gen off. Locate the speed adjustment screw (often found on the governor assembly or throttle linkage) and turn it to lower the engine RPM. Start with no load again and check. The best value is 52-53.
+3. Once the generator ran idle for a couple of mins, put its circuit breaker up enabling the load. The frequency normally drops to 50 under the load.
