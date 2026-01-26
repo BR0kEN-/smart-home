@@ -2,6 +2,10 @@
 
 ## Hardware
 
+> [!NOTE]
+> - This is the hardware I own. You don't have to have the same.
+> - The information that is not highly coupled to one of the hardware units will be shared agnostically.
+
 - Deye SUN-20K-SG05LP3-EU-SM2
 - Biom BALFP V1 300 Ah
 - Biom BALFP V2 300 Ah
