@@ -16,6 +16,7 @@
 ### Home Assistant
 
 - [Temperature-based battery charging current](home-assistant/temp-based-battery-charging-current)
+- [Notification: Generator AC input rejected by Deye](home-assistant/deye-generator-disconnected-notification)
 
 ## FAQ
 
