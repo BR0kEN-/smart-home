@@ -35,8 +35,11 @@ Before proceeding, ensure your entity IDs first:
           - action: mobile_app_homie
     ```
 
-> [!TIP]
-> No need to change the logic. The automation covers 1/3-phase systems.
+> [!IMPORTANT]
+> In case of having a single-phase system, adjust the logic:
+> ```yaml
+> states('sensor.inverter_generator_l1_voltage') | float(0) > 210
+> ```
 
 ```yaml
 mode: single
@@ -46,21 +49,19 @@ triggers:
   - alias: Generator is OFF while voltage is detected
     trigger: template
     value_template: |-
-      {%- set voltage_entities = [
-        'sensor.inverter_generator_l1_voltage',
-        'sensor.inverter_generator_l2_voltage',
-        'sensor.inverter_generator_l3_voltage',
-      ] -%}
-      {%- set voltage_total = voltage_entities 
-        | select('in', 'states')
-        | map('float', 0)
-        | list
-        | sum
-      -%}
       {{
-        is_state('binary_sensor.inverter_generator', 'off')
-        and voltage_total >= (210 * (voltage_entities | length))
+        is_state('binary_sensor.inverter_generator', 'off') and
+        (
+          states('sensor.inverter_generator_l1_voltage') | float(0) +
+          states('sensor.inverter_generator_l2_voltage') | float(0) +
+          states('sensor.inverter_generator_l3_voltage') | float(0)
+        ) > 630
       }}
+    for:
+      hours: 0
+      minutes: 0
+      # Avoid short spikes.
+      seconds: 20
 actions:
   - variables:
       id: generator_disconnected
