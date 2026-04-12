@@ -16,6 +16,10 @@ Applied on narrow screens (phones) only. Otherwise, stays at the top.
 ![Samsung A26 Screenshot](images/samsung-a26-ss.jpg)
 </details>
 
+## Known Limitations
+
+- The solution is mostly for the user dashboards, hence won't work in sections like `Calendar`, `File Editor`, `HACS`, etc. The `Energy` is covered though.
+
 ## How To
 
 1. Be ready to edit configs like I do using the [File Editor](https://github.com/home-assistant/addons/tree/master/configurator) app or any other way that is convenient to you.
@@ -45,6 +49,11 @@ Applied on narrow screens (phones) only. Otherwise, stays at the top.
          .narrow hui-view-container {
            padding-top: var(--safe-area-inset-top) !important;
            padding-bottom: calc(var(--header-height) + var(--safe-area-inset-bottom)) !important;
+         }
+     card-mod-view-yaml: |
+       hui-sections-view $: |
+         .narrow hui-view-footer {
+           bottom: calc(var(--header-height) + 1em) !important;
          }
    ```
    ![Theme editing](images/ui-file-editor.jpg)
