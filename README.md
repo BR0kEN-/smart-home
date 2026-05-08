@@ -23,6 +23,24 @@
 
 ### Automatic Voltage Regulators (aka Voltage Stabilizers)
 
+#### Do I need an AVR?
+
+Whether you need a stabilizer depends on the "health" of your local grid. If your lights flicker or your inverter constantly switches to battery mode even when the power is on, your grid is likely "dirty" (unstable).
+
+##### Why it helps
+
+- **Preventing Inverter "Cycling"**: Inverters are protective by nature. If the grid voltage hits a certain high (e.g., 253V) or low (e.g., 180V), the inverter disconnects to protect itself and your home. Without an AVR, the inverter will "cycle"-disconnecting and reconnecting every few minutes. This prevents heavy machinery, like heat pumps or air conditioners, from ever reaching their efficient operating state.
+- **Extending Appliance Lifespan**: High voltage pushes too much energy into components, causing "thermal stress" (overheating). Low voltage is equally dangerous for motors (fridges, pumps); when voltage drops, the motor must draw more current to maintain its power, which can melt internal windings.
+- **Expanding the "Operating Window"**: An AVR can take a "dying" grid signal of 140V and boost it back to 220V, allowing your inverter to stay connected to the grid instead of draining your batteries.
+
+##### The trade-offs
+
+- **The "Idle" Tax (Efficiency Loss)**: AVRs are never 100% efficient. Even when you aren't using much power, the AVR consumes energy to keep its internal processors and transformers running. High-end models like Quant or Volter are more efficient, but you should still expect a baseline "loss" of about 2% to 5% of your total throughput.
+- **Heat Generation**: Because of the energy transformation process, AVRs convert lost electricity into heat. In a small utility room, three AVRs can raise the temperature by 5–10°C, requiring better ventilation.
+- **High Initial Investment**: Double-conversion (inverter-type) stabilizers are the only ones truly safe for modern solar inverters, and they carry a premium price tag.
+- **Grid Stress**: It is a "selfish" device. If your neighborhood has low voltage and your AVR "pulls" more current to compensate, it causes the voltage to drop even further for your neighbors.
+- **ROI Impact**: Over a month, an AVR can "burn" 80–90 kWh. In a year, this can equate to \$500+ in lost export revenue. If your system earns \$2000/year like mine should, the AVR is effectively taking a 25% cut of your profits.
+
 #### Which AVR is inverter-compatible?
 
 - [Quant](https://quant.ua)
