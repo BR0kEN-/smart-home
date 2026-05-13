@@ -33,6 +33,9 @@ Applied on narrow screens (phones) only. Otherwise, stays at the top.
 4. Create `themes/downheader.yaml`. Name it the way you want. Paste inside:
    ```yaml
    downheader:
+     modes:
+       light: {}
+       dark: {}
      card-mod-theme: downheader
      card-mod-root-yaml: |
        .: |
