@@ -23,7 +23,7 @@ Applied on narrow screens (phones) only. Otherwise, stays at the top.
 ## How To
 
 1. Be ready to edit configs like I do using the [File Editor](https://github.com/home-assistant/addons/tree/master/configurator) app or any other way that is convenient to you.
-2. Install https://github.com/thomasloven/lovelace-card-mod
+2. Install https://uix.lf.technology/quick-start/
 3. Ensure these lines in your HA's `configuration.yaml`:
    ```yaml
    # Load frontend themes from the themes folder
@@ -36,8 +36,8 @@ Applied on narrow screens (phones) only. Otherwise, stays at the top.
      modes:
        light: {}
        dark: {}
-     card-mod-theme: downheader
-     card-mod-root-yaml: |
+     uix-theme: downheader
+     uix-root-yaml: |
        .: |
          .narrow .header {
            top: unset !important;
@@ -53,7 +53,7 @@ Applied on narrow screens (phones) only. Otherwise, stays at the top.
            padding-top: var(--safe-area-inset-top) !important;
            padding-bottom: calc(var(--header-height) + var(--safe-area-inset-bottom)) !important;
          }
-     card-mod-view-yaml: |
+     uix-view-yaml: |
        hui-sections-view $: |
          .narrow hui-view-footer {
            bottom: calc(var(--header-height) + 1em) !important;
