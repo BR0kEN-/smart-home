@@ -36,6 +36,7 @@ Applied on narrow screens (phones) only. Otherwise, stays at the top.
      modes:
        light: {}
        dark: {}
+     bubble-border-radius: "var(--ha-card-border-radius, var(--ha-border-radius-lg))"
      uix-theme: downheader
      uix-root-yaml: |
        .: |
@@ -44,7 +45,7 @@ Applied on narrow screens (phones) only. Otherwise, stays at the top.
            bottom: 0 !important;
            padding-top: unset !important;
            padding-bottom: var(--safe-area-inset-bottom) !important;
-           box-shadow: var(--mdc-top-app-bar-fixed-box-shadow) !important;
+           box-shadow: var(--bar-box-shadow);
          }
          .narrow .toolbar {
            border: 0 !important;
@@ -55,8 +56,19 @@ Applied on narrow screens (phones) only. Otherwise, stays at the top.
          }
      uix-view-yaml: |
        hui-sections-view $: |
-         .narrow hui-view-footer {
+         hui-view-footer[sticky] {
            bottom: calc(var(--header-height) + 1em) !important;
+         }
+     uix-card-yaml: |
+       "ha-card $$ hui-generic-entity-row $": |
+         .info::after {
+           content: var(--description, none);
+           display: block;
+           max-width: 80%;
+           white-space: pre-line;
+           color: var(--secondary-text-color);
+           font-size: var(--ha-font-size-s);
+           font-weight: normal;
          }
    ```
    ![Theme editing](images/ui-file-editor.jpg)
